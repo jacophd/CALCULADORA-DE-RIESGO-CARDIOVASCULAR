@@ -21,42 +21,48 @@
 <h4>FORMULARIO DE RIESGO CARDIOVASCULAR</h4>
     <div class="box">
         <div class="input-box">
-            <input type="text" placeholder="Nombre completo"/>
+            <input id="nombre" class="datos" type="text" placeholder="Nombre completo"/>
         </div><br>
         <div class="input-box">
-            <input type="email" placeholder="email"/>
+            <input id="email" class="datos" type="email" placeholder="email"/>
         </div><br>
         <div class="input-box">
-            <input type="text" placeholder="Sexo"/>
+            <input type="text" class="datos" placeholder="Sexo"/>
         </div><br>
         <div class="input-box">
-            <input type="number" placeholder="Edad"/>
+            <input type="number"  class="datos"placeholder="Edad"/>
         </div><br> 
         <div class="input-box">
-            <input type="number" placeholder="Peso en kilogramos"/>
+            <input type="number" id="peso" class="datos" placeholder="Peso en kilogramos"/>
         </div><br>  
         <div class="input-box">
-            <input type="number" placeholder="Talla en metros"/>
+            <input type="number"  id="talla" class="datos"placeholder="Talla en metros"/>
+            
         </div><br>
         <div class="input-box">
-            <input type="number" placeholder="Medida de la cintura en centimetros"/>
+            <input type="number" class="datos" placeholder="Medida de la cintura en centimetros"/>
         </div><br>
     </div>
 
     <input type="submit" id="calcular" value="calcular" class="boton"/>
     <p>Al dar clic en calcular , aceptas terminos y condiciones y que te enviemos información al correo registrado.</p><br>
 </div>
+<p id="emaill"></p>
 
     <div class="result">
     <h4>RESULTADO DE RIESGO CARDIOVASCULAR</h4>
     <p>Segun tus datos tus resultados son los siguientes.</p>
+    <p id="emaill"></p>
     <h4>INDICE DE MASA CORPORAL:</h4>
+    <input type="text" id="masa">
+    <input type="text" id="masa">
     <h4>RIESGO CARDIOVASCULAR:</h4>
     <script type="text/javascript" src="index.js"></script>
     </div>
 
 <p>Si quieres conocer más sobre el riesgo cardiovascular o realizar un calculo más preciso y para enfermedades especificas de tu riesgo ingresa al siguiente enlace: 
     <a class="enlace" href="#">framinghamheartstudy.org</a>   
+    
 </p>
 
 
