@@ -6,7 +6,8 @@ function calcular(){
     
     var talla = document.getElementById("talla").value;
     var peso = document.getElementById("peso").value;
-    var res = peso/(Math.pow(talla, 2));
-    document.getElementById("masa").value = res;
+    var BMI = peso/(Math.pow(talla, 2));
+    BMI = BMI.toFixed(2);
+    document.getElementById("masa").value = BMI;
 
 }
