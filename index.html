@@ -26,8 +26,9 @@
         <div class="input-box">
             <input id="email" class="datos" type="email" placeholder="email"/>
         </div><br>
-        <div class="input-box">
-            <input type="text" class="datos" placeholder="Sexo"/>
+        <div class="input-select">
+            <input type="radio" id="sexo" class="datos" name="sexo">Hombre
+            <input type="radio" id="sexo" class="datos" name="sexo">Mujer
         </div><br>
         <div class="input-box">
             <input type="number"  class="datos"placeholder="Edad"/>
@@ -40,7 +41,7 @@
             
         </div><br>
         <div class="input-box">
-            <input type="number" class="datos" placeholder="Medida de la cintura en centimetros"/>
+            <input type="number" id="abdomen" class="datos" placeholder="Medida de la cintura en centimetros"/>
         </div><br>
     </div>
 
@@ -54,6 +55,7 @@
     <h4>INDICE DE MASA CORPORAL:</h4>
     <input type="text" id="masa" readonly onmousedown="return false;" >
     <h4>RIESGO CARDIOVASCULAR:</h4>
+    <input type="text" id="risk" readonly onmousedown="return false;" >
     <script type="text/javascript" src="js/index.js"></script>
     </div>
 

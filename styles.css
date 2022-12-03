@@ -63,6 +63,17 @@ h4{
 
 }
 
+.input-select {
+  text-align:center;
+  margin-bottom: 2px;
+  border: 3px solid #b4dfe1;
+  width: 100%;
+  color: rgb(20, 101, 221);
+  font-size: 20px;
+  padding: 1px 5px;
+
+}
+
 .boton {
     border: none;
     width: 100%;
@@ -74,6 +85,8 @@ h4{
     cursor: pointer;
 
 }
+
+
 
 .boton:hover {
     background: #b4dfe1;
@@ -115,6 +128,7 @@ p {
       background: #b4dfe1;
   
   }
+
   #masa{
     border: 3px solid;
     border-radius: 2%;
@@ -126,3 +140,15 @@ p {
     color: #d34444;
   }
   
+  
+  #risk{
+    border: 3px solid;
+    border-radius: 2%;
+    border-color: #b4dfe1;
+    text-align: center;
+    width: 50%;
+    padding: 5px;
+    font-size: 25px;
+    color: #d34444;
+  }
+
