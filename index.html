@@ -7,50 +7,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
+    
+    
     <title>riesgo-cardiovascular</title>
 </head>
-<body>
+
+    
  <h1>CONOCE TU RIESGO CARDIOVASCULAR</h1> 
  <P>Quieres conocer tu riesgo cardiovascular, ingresa tus datos al fomrulario y recibiras una estimación rápida de tu riesgo de sufrir enfermedades cardiovasculares como hipertensión, infartos entre otras.</P>
  <p>Para iniciar por favor diligencia el siguiente formulario.</p>
 
-<form class="riesgo-cardiovascular">
+<div class="riesgo-cardiovascular">
 <h4>FORMULARIO DE RIESGO CARDIOVASCULAR</h4>
     <div class="box">
         <div class="input-box">
-            <input type="text" placeholder="Nombre completo"/>
+            <input id="nombre" class="datos" type="text" placeholder="Nombre completo"/>
         </div><br>
         <div class="input-box">
-            <input type="email" placeholder="email"/>
+            <input id="email" class="datos" type="email" placeholder="email"/>
+        </div><br>
+        <div class="input-select">
+            <input type="radio" id="sexo" class="datos" name="sexo">Hombre
+            <input type="radio" id="sexo" class="datos" name="sexo">Mujer
         </div><br>
         <div class="input-box">
-            <input type="number" placeholder="Edad"/>
+            <input type="number"  class="datos"placeholder="Edad"/>
         </div><br> 
         <div class="input-box">
-            <input type="number" placeholder="Peso en kilogramos"/>
+            <input type="number" id="peso" class="datos" placeholder="Peso en kilogramos"/>
         </div><br>  
         <div class="input-box">
-            <input type="number" placeholder="Talla en metros"/>
+            <input type="number"  id="talla" class="datos"placeholder="Talla en metros"/>
+            
         </div><br>
         <div class="input-box">
-            <input type="number" placeholder="Medida de la cintura en centimetros"/>
+            <input type="number" id="abdomen" class="datos" placeholder="Medida de la cintura en centimetros"/>
         </div><br>
     </div>
 
-    <input type="submit" value="calcular" class="boton"/>
+    <input type="submit" id="calcular" value="calcular" class="boton"/>
     <p>Al dar clic en calcular , aceptas terminos y condiciones y que te enviemos información al correo registrado.</p><br>
-</form>
+</div>
 
     <div class="result">
     <h4>RESULTADO DE RIESGO CARDIOVASCULAR</h4>
     <p>Segun tus datos tus resultados son los siguientes.</p>
     <h4>INDICE DE MASA CORPORAL:</h4>
+    <input type="text" id="masa" readonly onmousedown="return false;" >
     <h4>RIESGO CARDIOVASCULAR:</h4>
+    <input type="text" id="risk" readonly onmousedown="return false;" >
+    <script type="text/javascript" src="js/index.js"></script>
     </div>
 
 <p>Si quieres conocer más sobre el riesgo cardiovascular o realizar un calculo más preciso y para enfermedades especificas de tu riesgo ingresa al siguiente enlace: 
     <a class="enlace" href="#">framinghamheartstudy.org</a>   
+    
 </p>
-</body>
+
 
 </html>
