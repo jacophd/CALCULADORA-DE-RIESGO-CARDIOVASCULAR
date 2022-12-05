@@ -71,7 +71,7 @@ h4{
   color: rgb(20, 101, 221);
   font-size: 20px;
   padding: 1px 5px;
-
+display: flex;
 }
 
 .boton {

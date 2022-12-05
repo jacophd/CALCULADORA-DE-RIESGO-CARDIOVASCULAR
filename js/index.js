@@ -1,61 +1,135 @@
 
-document.getElementById("calcular").onclick = function(){
-    calcular()
+document.getElementById("calcular").onclick = function () {
+    iniciar();
 }
-function calcular(){
-    
-    var talla = document.getElementById("talla").value;
-    var peso = document.getElementById("peso").value;
-    var BMI = peso/(Math.pow(talla, 2));
-    BMI = BMI.toFixed(2);
-    var sexo = document.getElementById("sexo").value;
-    var abdomen = document.getElementById("abdomen").value;
-    
+function iniciar() {
+    var datos = obtenerDatos();
 
-    if(BMI>= 18.5 && BMI<=24.9){
-        document.getElementById("masa").value = BMI + " NORMAL";
-        document.getElementById("risk").value = " SIN RIESGO";
-    } else if (BMI>= 25 && BMI<=29.9) {
-        document.getElementById("masa").value = BMI + " SOBREPESO";
-        if (sexo == "mujer") {
-            if (abdomen>=88) {
-                document.getElementById("risk").value = "RIESGO ALTO";   
+    var resultadoDatos = calcular(datos);
+    resultado(resultadoDatos);
+    enviarCorreo(datos, resultadoDatos);
+}
+
+function obtenerDatos() {
+    var form = {
+        nombre: document.getElementById("nombre").value,
+        talla: document.getElementById("talla").value,
+        peso: document.getElementById("peso").value,
+        email: document.getElementById("email").value,
+        sexo: document.getElementById("sexo").value,
+        abdomen: document.getElementById("abdomen").value
+    };
+
+    form.BMI = (form.peso / (Math.pow(form.talla, 2))).toFixed(2);
+
+    return form;
+}
+
+function resultado(resultado) {
+    document.getElementById("masa").value = resultado.masa;
+    document.getElementById("risk").value = resultado.riesgo;
+}
+
+function calcular(datos) {
+    var resultado = new Object();
+
+    if (datos.BMI >= 18.5 && datos.BMI <= 24.9) {
+        resultado.masa = datos.BMI + " NORMAL";
+        resultado.riesgo = "SIN RIESGO";
+
+        return resultado;
+
+    } else if (datos.BMI >= 25 && datos.BMI <= 29.9) {
+
+        resultado.masa = datos.BMI + " SOBREPESO";
+
+        if (datos.sexo == "mujer") {
+
+            if (datos.abdomen >= 88) {
+                resultado.riesgo = "RIESGO ALTO";
+
+                return resultado;
+
             } else {
-                document.getElementById("risk").value = "RIESGO MODERADO"; 
+                resultado.riesgo = "RIESGO MODERADO";
+
+                return resultado;
+            }
+
+        } else {
+            if (datos.abdomen >= 102) {
+                resultado.riesgo = "RIESGO ALTO";
+
+                return resultado;
+
+            } else {
+                resultado.riesgo = "RIESGO MODERADO";
+
+                return resultado;
+            }
+        }
+
+    } else if (datos.BMI >= 30 && datos.BMI <= 34.9) {
+
+        resultado.masa = datos.BMI + " OBESIDAD GRADO 1";
+
+        if (datos.sexo == "mujer") {
+
+            if (datos.abdomen >= 88) {
+                resultado.riesgo = "RIESGO MUY ALTO";
+
+                return resultado;
+            } else {
+                resultado.riesgo = "RIESGO ALTO";
+
+                return resultado;
             }
         } else {
-            if (abdomen>=102) {
-                document.getElementById("risk").value = "RIESGO ALTO";   
+            if (datos.abdomen >= 102) {
+                resultado.riesgo = "RIESGO MUY ALTO";
+
+                return resultado;
+
             } else {
-                document.getElementById("risk").value = "RIESGO MODERADO"; 
-            } 
-        }
-    }else if (BMI>= 30 && BMI<=34.9) {
-        document.getElementById("masa").value = BMI + " OBESIDAD GRADO 1";
-        if (sexo == "mujer") {
-            if (abdomen>=88) {
-                document.getElementById("risk").value = "RIESGO MUY ALTO";   
-            } else {
-                document.getElementById("risk").value = "RIESGO ALTO"; 
+                resultado.riesgo = "RIESGO ALTO";
+
+                return resultado;
             }
-        } else {
-            if (abdomen>=102) {
-                document.getElementById("risk").value = "RIESGO MUY ALTO";   
-            } else {
-                document.getElementById("risk").value = "RIESGO ALTO"; 
-            } 
         }
-    }else if (BMI>= 35 && BMI<=39.9) {
-        document.getElementById("masa").value = BMI + " OBESIDAD GRADO 2";
-        document.getElementById("risk").value = " MUY ALTO";
-    }else if (BMI>= 40) {
-        document.getElementById("masa").value = BMI + " OBESIDAD GRADO 3";
-        document.getElementById("risk").value = " EXTREMADAMENTE ALTO";
+
+    } else if (datos.BMI >= 35 && datos.BMI <= 39.9) {
+
+        resultado.masa = datos.BMI + " OBESIDAD GRADO 2";
+        resultado.riesgo = " MUY ALTO";
+
+        return resultado;
+
+    } else if (datos.BMI >= 40) {
+
+        resultado.masa = datos.BMI + " OBESIDAD GRADO 3";
+        resultado.riesgo = " EXTREMADAMENTE ALTO";
+
+        return resultado;
     }
-    
+}
 
+function enviarCorreo(datos, resultado) {
+    var templateParams = {
+        nombre: datos.nombre,
+        masa_corporal: resultado.masa,
+        riesgo: resultado.riesgo,
+        email: datos.email
+    };
+
+    emailjs.init('hiZid7IJ6RJKq0oZA');
+
+    emailjs.send('service_4pprfxz', 'template_kny5qoo', templateParams)
+        .then(function (response) {
+            console.log('SUCCESS!', response.status, response.text);
+        }, function (error) {
+            console.log('FAILED...', error);
+        });
 }
 
 
-    
 

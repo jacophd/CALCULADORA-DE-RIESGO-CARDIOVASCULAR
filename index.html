@@ -2,67 +2,78 @@
 <!-- POR: JORGE CHAMORRO ID BANNER: 100080449 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
-    
-    
     <title>riesgo-cardiovascular</title>
+    <link rel="shortcut icon"
+        href="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/512/external-health-hygiene-flaticons-lineal-color-flat-icons-3.png"
+        type="image/x-icon">
 </head>
 
-    
- <h1>CONOCE TU RIESGO CARDIOVASCULAR</h1> 
- <P>Quieres conocer tu riesgo cardiovascular, ingresa tus datos al fomrulario y recibiras una estimación rápida de tu riesgo de sufrir enfermedades cardiovasculares como hipertensión, infartos entre otras.</P>
- <p>Para iniciar por favor diligencia el siguiente formulario.</p>
+<body>
+    <h1>CONOCE TU RIESGO CARDIOVASCULAR</h1>
+    <P>Quieres conocer tu riesgo cardiovascular, ingresa tus datos al fomrulario y recibiras una estimación rápida de tu
+        riesgo de sufrir enfermedades cardiovasculares como hipertensión, infartos entre otras.</P>
+    <p>Para iniciar por favor diligencia el siguiente formulario.</p>
 
-<div class="riesgo-cardiovascular">
-<h4>FORMULARIO DE RIESGO CARDIOVASCULAR</h4>
-    <div class="box">
-        <div class="input-box">
-            <input id="nombre" class="datos" type="text" placeholder="Nombre completo"/>
-        </div><br>
-        <div class="input-box">
-            <input id="email" class="datos" type="email" placeholder="email"/>
-        </div><br>
-        <div class="input-select">
-            <input type="radio" id="sexo" class="datos" name="sexo">Hombre
-            <input type="radio" id="sexo" class="datos" name="sexo">Mujer
-        </div><br>
-        <div class="input-box">
-            <input type="number"  class="datos"placeholder="Edad"/>
-        </div><br> 
-        <div class="input-box">
-            <input type="number" id="peso" class="datos" placeholder="Peso en kilogramos"/>
-        </div><br>  
-        <div class="input-box">
-            <input type="number"  id="talla" class="datos"placeholder="Talla en metros"/>
-            
-        </div><br>
-        <div class="input-box">
-            <input type="number" id="abdomen" class="datos" placeholder="Medida de la cintura en centimetros"/>
-        </div><br>
+    <div class="riesgo-cardiovascular">
+        <h4>FORMULARIO DE RIESGO CARDIOVASCULAR</h4>
+        <div class="box">
+            <div class="input-box">
+                <input id="nombre" class="datos" type="text" placeholder="Nombre completo" />
+            </div><br>
+            <div class="input-box">
+                <input id="email" class="datos" type="email" placeholder="email" />
+            </div><br>
+            <div class="input-select">
+                <div>
+                    <input type="radio" id="sexo" class="datos" name="sexo">Hombre
+                </div>
+                <div>
+                    <input type="radio" id="sexo" class="datos" name="sexo">Mujer
+                </div>
+            </div><br>
+            <div class="input-box">
+                <input type="number" class="datos" placeholder="Edad" />
+            </div><br>
+            <div class="input-box">
+                <input type="number" id="peso" class="datos" placeholder="Peso en kilogramos" />
+            </div><br>
+            <div class="input-box">
+                <input type="number" id="talla" class="datos" placeholder="Talla en metros" />
+
+            </div><br>
+            <div class="input-box">
+                <input type="number" id="abdomen" class="datos" placeholder="Medida de la cintura en centimetros" />
+            </div><br>
+        </div>
+
+        <input type="submit" id="calcular" value="calcular" class="boton" />
+        <p>Al dar clic en calcular , aceptas terminos y condiciones y que te enviemos información al correo registrado.
+        </p><br>
     </div>
-
-    <input type="submit" id="calcular" value="calcular" class="boton"/>
-    <p>Al dar clic en calcular , aceptas terminos y condiciones y que te enviemos información al correo registrado.</p><br>
-</div>
 
     <div class="result">
-    <h4>RESULTADO DE RIESGO CARDIOVASCULAR</h4>
-    <p>Segun tus datos tus resultados son los siguientes.</p>
-    <h4>INDICE DE MASA CORPORAL:</h4>
-    <input type="text" id="masa" readonly onmousedown="return false;" >
-    <h4>RIESGO CARDIOVASCULAR:</h4>
-    <input type="text" id="risk" readonly onmousedown="return false;" >
-    <script type="text/javascript" src="js/index.js"></script>
+        <h4>RESULTADO DE RIESGO CARDIOVASCULAR</h4>
+        <p>Segun tus datos tus resultados son los siguientes.</p>
+        <h4>INDICE DE MASA CORPORAL:</h4>
+        <input type="text" id="masa" readonly onmousedown="return false;">
+        <h4>RIESGO CARDIOVASCULAR:</h4>
+        <input type="text" id="risk" readonly onmousedown="return false;">
+        <script type="text/javascript" src="js/index.js"></script>
     </div>
 
-<p>Si quieres conocer más sobre el riesgo cardiovascular o realizar un calculo más preciso y para enfermedades especificas de tu riesgo ingresa al siguiente enlace: 
-    <a class="enlace" href="#">framinghamheartstudy.org</a>   
-    
-</p>
+    <p>Si quieres conocer más sobre el riesgo cardiovascular o realizar un calculo más preciso y para enfermedades
+        especificas de tu riesgo ingresa al siguiente enlace:
+        <a class="enlace" href="#">framinghamheartstudy.org</a>
 
+    </p>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.0/dist/email.min.js">
+    </script>
+</body>
 
 </html>
